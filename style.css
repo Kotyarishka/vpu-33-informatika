@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a { text-decoration: none; color: #000; transition: color .1s ease-in-out; }
+a:hover { color: #333;}
+ul { list-style: none; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 50px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.navbar .navbar-branding{
+    font-size: 30px;
+    font-weight: 800;
+    color: #333;
+    text-decoration: none;
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    margin-top: 30px;
+
+    align-items: start;
+}
+
+.container-grid__item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.container-grid__item--header {
+    margin-bottom: 0;
+    transition: margin-bottom .3s ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-grid__item--header img {
+    width: 24px;
+    height: 24px;
+    /* border-radius: 50%; */
+    object-fit: cover;
+
+    transition: transform .3s ease-in-out;
+}
+
+.container-grid__item.show .container-grid__item--header {
+    margin-bottom: 2rem;
+}
+
+.container-grid__item.show .container-grid__item--header img {
+    transform: rotate(-180deg);
+}
+
+.container-grid__item--content {
+    height: 0;
+    overflow-y: hidden;
+    
+    transition: height .3s ease-in-out;
+}
+
+.container-grid__item.show .container-grid__item--content{
+    height: 100px;
+}
+
+.container-grid__item--content ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+
+    gap: 10px;
+}
+
+.container-grid__item--content ul li a {
+    padding: 5px 0;
+}
+
+.container-grid__item--content ul li::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #f5f5f5;
+
+    transition: background-color .3s ease-in-out;
+}
+
+.container-grid__item--content ul li:hover::after {
+    background-color: #333;
+}

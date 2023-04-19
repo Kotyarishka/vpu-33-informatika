@@ -117,3 +117,23 @@ body {
 .container-grid__item--content ul li:hover::after {
     background-color: #333;
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .container-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .navbar .navbar-branding {
+        text-align: center;
+    }
+}
